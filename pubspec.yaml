@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^7.0.0
   equatable: ^2.0.0
+  url_launcher: ^6.0.3
   flutter_svg: ^0.19.3
   flutter_localizations:
     sdk: flutter
@@ -57,6 +58,7 @@ flutter:
     - svg/nav/
     - svg/settings/
     - svg/social/
+    - assets/app/
  
 
   # An image asset can refer to one or more resolution-specific "variants", see

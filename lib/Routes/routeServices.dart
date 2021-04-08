@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_profile/Pages/HomePage/homeScreen.dart';
+import 'package:my_profile/Pages/MainPage/mainScreen.dart';
 import 'package:my_profile/Routes/routeAimation.dart';
 
 class RouteServices {
@@ -8,7 +8,7 @@ class RouteServices {
     // final args = routeSettings.arguments;
     switch (routeSettings.name) {
       case "/":
-        return CustomPageRoute(child: HomeScreen());
+        return CustomPageRoute(child: MainScreen());
 
       default:
         return _errorRoute();

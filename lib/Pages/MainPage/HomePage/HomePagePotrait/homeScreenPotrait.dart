@@ -8,8 +8,6 @@ class HomeScreenPotrait extends StatefulWidget {
 class _HomeScreenPotraitState extends State<HomeScreenPotrait> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("Potrait"),
-    );
+    return Container();
   }
 }

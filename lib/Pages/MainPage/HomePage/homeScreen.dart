@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_profile/Pages/HomePage/HomePageLandscape/homeScreenLandscape.dart';
-import 'package:my_profile/Pages/HomePage/HomePagePotrait/homeScreenPotrait.dart';
 import 'package:my_profile/sizeConfig.dart';
+import 'HomePageLandscape/homeScreenLandscape.dart';
+import 'HomePagePotrait/homeScreenPotrait.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

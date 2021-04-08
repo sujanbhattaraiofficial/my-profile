@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:my_profile/Pages/HomePage/homeScreen.dart';
+import 'package:my_profile/Bloc/NavBarBloc.dart/navBarBloc.dart';
+import 'package:my_profile/Bloc/ThemeBloc/themeBloc.dart';
+import 'package:my_profile/Bloc/ThemeBloc/themeState.dart';
+import 'package:my_profile/Pages/MainPage/mainScreen.dart';
 import 'package:my_profile/Themes/themeStyle.dart';
 import 'package:my_profile/sizeConfig.dart';
-
-import 'Bloc/themeBloc.dart';
-import 'Bloc/themeState.dart';
 import 'Generated/l10n.dart';
 import 'Routes/routeServices.dart';
 
@@ -47,30 +47,35 @@ class MyApp extends StatelessWidget {
         SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent),
       );
     }
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        return OrientationBuilder(
-          builder: (BuildContext context, Orientation orientation) {
-            SizeConfig().init(constraints, orientation);
-            return MaterialApp(
-              locale: Locale("en", "US"),
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-                DefaultCupertinoLocalizations.delegate,
-              ],
-              theme: state.themeData,
-              home: HomeScreen(),
-              // initialRoute: '/',
-              onGenerateRoute: RouteServices.generateRoute,
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-            );
-          },
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => NavBarBloc(0)),
+      ],
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return OrientationBuilder(
+            builder: (BuildContext context, Orientation orientation) {
+              SizeConfig().init(constraints, orientation);
+              return MaterialApp(
+                locale: Locale("en", "US"),
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                  DefaultCupertinoLocalizations.delegate,
+                ],
+                theme: state.themeData,
+                home: MainScreen(),
+                // initialRoute: '/',
+                onGenerateRoute: RouteServices.generateRoute,
+                supportedLocales: S.delegate.supportedLocales,
+                debugShowCheckedModeBanner: false,
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

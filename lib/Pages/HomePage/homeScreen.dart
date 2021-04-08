@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_profile/Pages/HomePage/HomePageMaterials/homePageAppBar.dart';
+import 'package:my_profile/Pages/HomePage/HomePageLandscape/homeScreenLandscape.dart';
+import 'package:my_profile/Pages/HomePage/HomePagePotrait/homeScreenPotrait.dart';
+import 'package:my_profile/sizeConfig.dart';
 
-import 'drawer/drawerMenu.dart';
-
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: DrawerMenu(),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [HomePageAppBar()],
-      ),
-    );
-  }
+  Widget build(BuildContext context) =>
+      SizeConfig.isPortrait && SizeConfig.isMobilePortrait
+          ? HomeScreenPotrait()
+          : HomeScreenLandscape();
 }

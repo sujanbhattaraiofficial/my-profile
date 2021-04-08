@@ -1,10 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:my_profile/Pages/HomePage/homeScreen.dart';
 import 'package:my_profile/Themes/themeStyle.dart';
 import 'package:my_profile/sizeConfig.dart';
 
@@ -63,7 +62,8 @@ class MyApp extends StatelessWidget {
                 DefaultCupertinoLocalizations.delegate,
               ],
               theme: state.themeData,
-              initialRoute: '/',
+              home: HomeScreen(),
+              // initialRoute: '/',
               onGenerateRoute: RouteServices.generateRoute,
               supportedLocales: S.delegate.supportedLocales,
               debugShowCheckedModeBanner: false,

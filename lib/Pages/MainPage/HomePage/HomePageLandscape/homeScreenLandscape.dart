@@ -28,12 +28,12 @@ class _HomeScreenLandscapeState extends State<HomeScreenLandscape> {
             ],
           ),
         )),
-        Container(
-            height: MediaQuery.of(context).size.height,
-            child: Image.asset(
-              "assets/app/myphoto.png",
-              fit: BoxFit.cover,
-            ))
+        // Container(
+        //     height: MediaQuery.of(context).size.height,
+        //     child: Image.asset(
+        //       "assets/app/myphoto.png",
+        //       fit: BoxFit.cover,
+        //     ))
       ],
     ));
   }

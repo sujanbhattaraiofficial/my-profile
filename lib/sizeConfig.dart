@@ -12,6 +12,7 @@ class SizeConfig {
   static double heightMultiplier;
   static double widthMultiplier;
   static bool isPortrait = true;
+  static bool isWebLandscape = false;
   static bool isMobilePortrait = false;
 
   void init(BoxConstraints constraints, Orientation orientation) {
@@ -22,11 +23,15 @@ class SizeConfig {
       if (_screenWidth < 450) {
         isMobilePortrait = true;
       }
+      isWebLandscape = false;
     } else {
       _screenWidth = constraints.maxHeight;
       _screenHeight = constraints.maxWidth;
       isPortrait = false;
       isMobilePortrait = false;
+      if (constraints.maxWidth > 640) {
+        isWebLandscape = true;
+      }
     }
 
     _blockWidth = _screenWidth / 100;

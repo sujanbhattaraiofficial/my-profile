@@ -7,13 +7,7 @@ import 'package:my_profile/widgets/Common/verticalLine.dart';
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    if (SizeConfig.isPortrait && SizeConfig.isMobilePortrait) {
-      return Scaffold(
-        body: SafeArea(
-          child: CallNavBarPage(),
-        ),
-      );
-    } else {
+    if (SizeConfig.isWebLandscape) {
       return Scaffold(
         body: SafeArea(
           child: Row(
@@ -27,6 +21,12 @@ class MainScreen extends StatelessWidget {
               Expanded(child: CallNavBarPage())
             ],
           ),
+        ),
+      );
+    } else {
+      return Scaffold(
+        body: SafeArea(
+          child: CallNavBarPage(),
         ),
       );
     }

@@ -11,7 +11,7 @@ class HorizontalLine extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: height == null ? 0.15 * SizeConfig.heightMultiplier : height,
-      color: Color(0xFFF5F5F5),
+      color: Colors.grey[200],
     );
   }
 }

@@ -6,5 +6,5 @@ import 'HomePagePotrait/homeScreenPotrait.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      SizeConfig.isWebLandscape ? HomeScreenLandscape() : HomeScreenPotrait();
+      SizeConfig.isMobilePortrait ? HomeScreenPotrait() : HomeScreenLandscape();
 }

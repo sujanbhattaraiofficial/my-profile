@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/sizeConfig.dart';
 
-class ContactScreen extends StatefulWidget {
-  @override
-  _ContactScreenState createState() => _ContactScreenState();
-}
+import 'ContactPageLandscape/contactScreenLandscape.dart';
 
-class _ContactScreenState extends State<ContactScreen> {
+class ContactScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  Widget build(BuildContext context) => SizeConfig.isMobilePortrait
+      ? ContactScreenLandscape()
+      : ContactScreenLandscape();
 }
